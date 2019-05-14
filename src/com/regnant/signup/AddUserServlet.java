@@ -47,31 +47,34 @@ public class AddUserServlet extends HttpServlet {
 		u.setCity(city);
 		u.setState(state);
 		u.setEmail(mail);
-		Long mbl = Long.parseLong(mobile);
-		u.setMobile(mbl);
-		u.setPincode(Long.parseLong(pincode));
+		u.setMobile(mobile);
+		u.setPincode(pincode);
 		u.setPan(pan);
 
 		// Encrypt the password
 
 		String pwd = Base64.getEncoder().encodeToString(password.getBytes());
 		u.setPassword(pwd);
-		Validator v = new Validator();
-		boolean chk = v.checkSignUp(mail, mbl);
-		
-		if (chk && v.checkObject(u) ) {
-			UserCRUDOperations uop = new UserCRUDOperations();
-			int rows_insert = uop.AddUser(u);
-			SendMail sm = new SendMail();
-			sm.setname(fname);
-			sm.Mailsend(mail);
-			System.out.println(rows_insert + " Rows inserted");
-			request.getRequestDispatcher("Success.html").forward(request, response);
-		}
-		else
-			request.getRequestDispatcher("SignupUser.html").forward(request, response);
 
-	}
+		Validator v = new Validator();
+		if (v.checkObject(u)) {
+			if (v.isValidEmailAddress(mail)&&v.isValidMobile(mobile)) {
+				boolean chk = v.checkSignUp(mail, mobile);
+				if (chk) {
+					UserCRUDOperations uop = new UserCRUDOperations();
+					int rows_insert = uop.AddUser(u);
+					System.out.println(rows_insert + " Rows inserted");
+					if (rows_insert == 1) {
+						SendMail sm = new SendMail();
+						sm.setname(fname);
+						sm.Mailsend(mail);
+						request.getRequestDispatcher("Success.html").forward(request, response);
+					}
+				}
+			}
+		} else
+			request.getRequestDispatcher("SignupUser.html").forward(request, response);
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

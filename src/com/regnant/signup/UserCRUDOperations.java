@@ -18,8 +18,8 @@ public class UserCRUDOperations {
 			pstmt.setString(3, u.getCity());
 			pstmt.setString(4, u.getState());
 			pstmt.setString(5, u.getEmail());
-			pstmt.setLong(6, u.getMobile());
-			pstmt.setLong(7, u.getPincode());
+			pstmt.setString(6, u.getMobile());
+			pstmt.setString(7, u.getPincode());
 			pstmt.setString(8, u.getPan());
 			pstmt.setString(9, u.getPassword());
 			rows_count=pstmt.executeUpdate();
@@ -31,8 +31,7 @@ public class UserCRUDOperations {
 		} catch (SQLException e) {
 			System.out.println("Exception in AddUser");
 			e.printStackTrace();
-		}
-	
+		}	
 		return rows_count;
 	}
 //	public static void main(String[] args) {

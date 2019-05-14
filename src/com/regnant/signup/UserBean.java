@@ -2,8 +2,7 @@ package com.regnant.signup;
 
 public class UserBean {
 
-		String first_name,last_name,city,state,email_id,pan_no,password;
-		long mobile,pincode;
+		String first_name,last_name,city,state,email_id,pan_no,password,mobile,pincode;
 		public void setFirstName(String first_name) {
 			this.first_name=first_name;
 		}
@@ -40,16 +39,16 @@ public class UserBean {
 		public String getPan() {
 			return pan_no;			
 		}
-		public void setMobile(Long mobile) {
+		public void setMobile(String mobile) {
 			this.mobile=mobile;
 		}
-		public long getMobile() {
+		public String getMobile() {
 			return mobile;			
 		}
-		public void setPincode(Long pincode) {
+		public void setPincode(String pincode) {
 			this.pincode=pincode;
 		}
-		public long getPincode() {
+		public String getPincode() {
 			return pincode;			
 		}
 		public void setPassword(String Password) {

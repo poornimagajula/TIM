@@ -31,7 +31,7 @@ public class SendMail {
 		Message message = new MimeMessage(session);
 
 		try {
-			message.setFrom(new InternetAddress("poornima.thota87@gmail.com"));
+			message.setFrom(new InternetAddress(senderEmail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(tomail));
 			message.setSubject("Greetings from Trust In Me");
 			String name=getname();
