@@ -1,6 +1,6 @@
 # Trust In Me
 
-Its a Stock Trading Project. Trade and Invest in stocks online seamlessly.
+Its a Stock Trading Project. This project is to create a website/App to Trade and Invest in stocks online seamlessly.
 Some of our products include Cash trading, Margin Product etc..
 
 # Requirements.
