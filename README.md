@@ -48,9 +48,9 @@ Some of our products include Cash trading, Margin Product etc...
 #Tables
 1.Users Table - Structure
 
-| First_Name     | Last_Name   | City      |    State      |     Email_Id           |   Mobile  | PinCode  |   Pan_No     |Password|
-| -------------  |-------------| ----------|-------------- |----------------------  |-----------|----------|------------  |--------  |
-|  Thrinath      |  seella     |  Nandyal  |Andhra Pradesh |thrinath@gmail.com      |9581436061 |  518501  |              |abc@123   |
-|  Poornima      |  Thota      |   Tenali  |Andhra Pradesh |poornima4dwbi@gmail.com |9666163164 |  522201  |  AMCPT5127D  |test@123  |
-|  Sai           |  Dharshan   |  Chennai  |Tamilnadu      |saidharshan21@gmail.com |8056028700 |  600034  |  507DDFG56D  |master@123|
+|Id|| First_Name     | Last_Name   | City      |    State      |     Email_Id           |   Mobile  | PinCode  |   Pan_No     |Password|
+|-| -------------  |-------------| ----------|-------------- |----------------------  |-----------|----------|------------  |--------  |
+|1|  Thrinath      |  seella     |  Nandyal  |Andhra Pradesh |thrinath@gmail.com      |9581436061 |  518501  |              |abc@123   |
+|2|  Poornima      |  Thota      |   Tenali  |Andhra Pradesh |poornima4dwbi@gmail.com |9666163164 |  522201  |  AMCPT5127D  |test@123  |
+|3|  Sai           |  Dharshan   |  Chennai  |Tamilnadu      |saidharshan21@gmail.com |8056028700 |  600034  |  507DDFG56D  |master@123|
 # Test Cases.
