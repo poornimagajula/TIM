@@ -49,7 +49,7 @@ public class AddUserServlet extends HttpServlet {
 		u.setPincode(pincode);
 		u.setPan(pan);
 
-		// Encrypt the password
+		// Encryption of the password
 
 		String pwd = Base64.getEncoder().encodeToString(password.getBytes());
 		u.setPassword(pwd);
