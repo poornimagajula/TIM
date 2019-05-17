@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class SendMail {
 
-	public void Mailsend(String tomail) {
+	public void Mailsend(String tomail, String name) {
 
 		final String senderEmail = "trustinme.tim@gmail.com";
 		final String password = "trust@123";
@@ -34,7 +34,6 @@ public class SendMail {
 			message.setFrom(new InternetAddress(senderEmail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(tomail));
 			message.setSubject("Greetings from Trust In Me");
-			String name=getname();
 			message.setText(" Mr/Ms."+name+"\n Thanks for Registering with Trust In Me. \n\n\n\n\n Thanks&Regards \n Trust In Me(TIM) Team.");
 
 			Transport.send(message);
@@ -46,16 +45,5 @@ public class SendMail {
 		}
 
 	}
-	String ename;
-	public void setname(String name) {
-		this.ename=name;
-	}
-	public String getname() {
-		return ename;
-	}
-//	public static void main(String[] args) {
-//		SendMail sm=new SendMail();
-//		sm.Mailsend("poornima.thota31@gmail.com");
-//	
-//	}
+	
 }

@@ -3,41 +3,62 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Open a online Trading account with Trust in Me</title>
-<link rel="stylesheet" type="text/css" href="user.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Dancing+Script|Noto+Serif" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="Signup.css">
 </head>
-<body>
-<div class="header">
-	<div class="navbar">
+<body bgcolor="#F1F1F1">
+<script type="text/javascript">
+function mouseoverPass(obj) {
+var obj = document.getElementById('myPassword');
+obj.type = "text";
+}
+function mouseoutPass(obj) {
+var obj = document.getElementById('myPassword');
+obj.type = "password";
+}
+</script>
+	<div class="header">
+		<div class="company"><a href="Home.html">Trust In Me</a></div>				
+		<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
+		
 	</div>
-</div>
-<div class="Signup" style="background-color:white;" >
-	<form action="CustomerOverview" method="post">
-		<input type="Text" name="firstname" placeholder="First Name">
-		<input type="text" name="lastname" placeholder="Last Name">
-		<select name="city">
-			<option>Select City</option>
-			<option>Bangalore</option>
-			<option>Hyderabad</option>
-			<option>Chennai</option>
-			<option>Guntur</option>
-			<option>Tenali</option>
-			<option>Rajahmundry</option>
-			<option>Vijayawada</option>
-			<option>Vizag</option>
-			<option>Tirupathi</option>	
-			<option>Nandyal</option>
-		</select>
-		<input type="text" name="State" placeholder="State"/>
-		<input type="text" name="email" placeholder="Enter Email ID" />
-		<input type="text" name="mobile" placeholder="Enter Mobile No." maxlength="10"/>
-		<input type="text" name="pincode" placeholder="Enter Pincode" />
-		<input type="text" name="PanNo" placeholder="Enter Pan No" />
-		<input type="password" name="Password" placeholder="Password" />
-		<input type="submit"/>
-		
-		
-	</form>
-</div>
-
+	<div class="company_name">
+		<span class="name">Signing up for Trust in Me is fast and free. </span>
+	</div> 
+	<div class="Signup" style="background-color:white;" >
+	<div class="getstarted" >Get started</div>
+	<!-- <div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div> -->
+	<div class="fields">
+		<form action="CustomerOverview" method="post">
+			<input type="Text" name="firstname" placeholder="    First Name">
+			<input type="text" name="lastname" placeholder="     Last Name"><br>
+			<select name="city">
+				<option>&nbsp;&nbsp;&nbsp;Select City</option>
+				<option>Bengaluru</option>
+				<option>Hyderabad</option>
+				<option>Chennai</option>
+				<option>Guntur</option>
+				<option>Tenali</option>
+				<option>Rajahmundry</option>
+				<option>Vijayawada</option>
+				<option>Vizag</option>
+				<option>Tirupati</option>	
+				<option>Nandyal</option>
+			</select>
+			<input type="text" name="State" placeholder="    State"/><br>
+			<input type="text" name="email" placeholder="    Email" />
+			<input type="text" name="mobile" placeholder="    Mobile" maxlength="10"/><br>
+			<input type="text" name="pincode" placeholder="    Pincode" />
+			<input type="text" name="PanNo" placeholder="     Pancard No" /><br>
+			<input type="password" name="Password" id="myPassword" placeholder="    Create Password" />
+			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
+			<input type="password" name="Password" id="myPassword" placeholder="    Confirm Password" /><br>
+			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
+			<button type="submit">Register</button>		
+			<div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div>
+		</form>
+	</div>
+	</div>
 </body>
 </html>

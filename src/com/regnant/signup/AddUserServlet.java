@@ -12,25 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AddUserServlet
  */
-@WebServlet("/CustomerOverview")
+@WebServlet("/AddUserServlet")
 public class AddUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AddUserServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public AddUserServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String fname = request.getParameter("firstname");
 		String lname = request.getParameter("lastname");
 		String city = request.getParameter("city");
@@ -59,15 +57,15 @@ public class AddUserServlet extends HttpServlet {
 		Validator v = new Validator();
 		if (v.checkObject(u)) {
 			if (v.isValidEmailAddress(mail)&&v.isValidMobile(mobile)) {
-				boolean chk = v.checkSignUp(mail, mobile);
+				boolean chk = v.checkSignUp(mail,mobile,pan);
 				if (chk) {
 					UserCRUDOperations uop = new UserCRUDOperations();
 					int rows_insert = uop.AddUser(u);
 					System.out.println(rows_insert + " Rows inserted");
 					if (rows_insert == 1) {
 						SendMail sm = new SendMail();
-						sm.setname(fname);
-						sm.Mailsend(mail);
+						//sm.setname(fname);
+						sm.Mailsend(fname,mail);
 						request.getRequestDispatcher("Success.html").forward(request, response);
 					}
 				}
@@ -75,13 +73,12 @@ public class AddUserServlet extends HttpServlet {
 		} else
 			request.getRequestDispatcher("SignupUser.html").forward(request, response);
 		}
+	
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

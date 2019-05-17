@@ -2,7 +2,10 @@ package com.regnant.signup;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import com.regnant.connection.DBConnection;
 
 public class UserCRUDOperations {
@@ -33,6 +36,32 @@ public class UserCRUDOperations {
 			e.printStackTrace();
 		}	
 		return rows_count;
+	}
+	public List<UserBean> LoginUser() {
+		List<UserBean> ulist=new ArrayList<>();
+		try {
+			Connection connection=DBConnection.getDBconnection();
+			PreparedStatement pstmt=null;			
+			String Query= "select Email_id,Mobile,Pan_No,Password from trustinme.user_tbl";
+			pstmt=connection.prepareStatement(Query);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				UserBean u=new UserBean();
+				u.setEmail(rs.getString(1));
+				u.setMobile(rs.getString(2));
+				u.setPan(rs.getString(3));
+				u.setPassword(rs.getString(4));
+				ulist.add(u);
+			}
+			rs.close();
+			connection.close();
+			pstmt.close();
+		}catch (SQLException e) {
+			System.out.println("Exception in LoginUser");
+			e.printStackTrace();
+		}
+		return ulist;
+		
 	}
 //	public static void main(String[] args) {
 //		UserBean u1=new UserBean();

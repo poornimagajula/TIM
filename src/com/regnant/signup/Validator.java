@@ -11,14 +11,15 @@ import javax.mail.internet.InternetAddress;
 import com.regnant.connection.DBConnection;
 
 public class Validator {
-	public boolean checkSignUp(String mailid,String mobile) {
-		String query="select * from trustinme.user_tbl where Email_id=? && Mobile=?";
+	public boolean checkSignUp(String mailid,String mobile, String pan) {
+		String query="select * from trustinme.user_tbl where Email_id=? && Mobile=? && Pan_No=?";
 		
 		try {
 			Connection connection=DBConnection.getDBconnection();
 			PreparedStatement pstmt=connection.prepareStatement(query);
 			pstmt.setString(1, mailid);
 			pstmt.setString(2, mobile);
+			pstmt.setString(3, pan);
 			ResultSet rs=pstmt.executeQuery();
 			if(rs.next()) {
 				return false;
