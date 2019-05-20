@@ -1,10 +1,9 @@
 package com.regnant.signup;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
-import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddUserServlet
+ * Servlet implementation class SetPwdServlet
  */
-@WebServlet("/Login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/SetPwdServlet")
+public class SetPwdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginServlet() {
+	public SetPwdServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,36 +31,31 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String otp = request.getParameter("otp");
+		String password = request.getParameter("password");
+		String cnfrm = request.getParameter("cnfrm");
+		
+		ServletContext sc=getServletContext();
+		String mailotp=(String) sc.getAttribute("otp");
+		String mail=(String)sc.getAttribute("email");
 
-		String userid = request.getParameter("userid");
-		String pan = request.getParameter("PanNo");
-		String password = request.getParameter("Password");
-		
-		//Encrypt the password
-		String pwd = Base64.getEncoder().encodeToString(password.getBytes());
-	
-		System.out.println(userid+"************");
-		
-		UserCRUDOperations uop = new UserCRUDOperations();
-		List<UserBean> ulist=new ArrayList<>();
 		UserBean u = new UserBean();
-		u.setEmail(userid);
-		u.setMobile(userid);
-		u.setPan(pan);
+		u.setEmail(mail);
+		String pwd = Base64.getEncoder().encodeToString(password.getBytes());
 		u.setPassword(pwd);
-		ulist=uop.LoginUser(u);
-		u=ulist.get(0);
-		String fname=String.valueOf(u);
-		request.setAttribute(fname,"fname");
-		if(ulist.isEmpty()) {
-			request.getRequestDispatcher("/Login.html").forward(request, response);
+		if (mailotp.equals(otp)) {
+			if (password.equals(cnfrm)) {
+				
+				UserCRUDOperations uop = new UserCRUDOperations();
+				int row_count = uop.updatePwd(u);
+				System.out.println(row_count + " rows inserted");
+				request.getRequestDispatcher("Login.html").forward(request, response);
+			}
 		}
 		else {
-			request.getRequestDispatcher("Success.html").forward(request, response);	
-			}
-		}	
-		
-		
+			request.getRequestDispatcher("wrongotp.html").forward(request, response);
+		}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

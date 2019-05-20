@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Trust In Me</title>
-<link type="text/css" rel="stylesheet" href="home.css">
+<link type="text/css" rel="stylesheet" href="forgot.css">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,6 +15,14 @@
 			<div class="company"><a href="Home.html">Trust In Me</a></div>				
 			<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
 		
+	</div>
+	<div class="reset">
+		<p class="pwd"><b>Reset</b> Password</p>
+		<p class="matter"> Enter your email address you use for TIM and we'll send you <br>instructions to reset your password</p>
+		<form action="ForgotServlet" method="post">
+				<div class="label">Email Address:</div><input type="email" name="email" /><br>
+				<a href="Login.html"><button type="button" class="cancel">Cancel</button></a><button type="submit" class="send">Send Email</button>
+		</form>		
 	</div>
 </body>
 </html>

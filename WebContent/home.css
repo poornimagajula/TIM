@@ -1,8 +1,17 @@
 @charset "ISO-8859-1";
+.navbar{
+	height:40px;
+	width:100%;
+	top:0px; right:0px;
+	position: fixed;
+	border:0px solid tomato;
+	background-color: #464646;
+}
 .header{
 	height:100px; 
 	width:100%; 
-	background-color: #454545; 
+	margin-top:40px;
+	background-color: #303030; 
 	top:0px; right:0px; 
 	position:fixed; 
 	border:0px solid green;
@@ -35,21 +44,21 @@
 	position:fixed;
 }
 .login{
-	height:30px; width:200px; float:right; border:0px solid green;
+	height:30px; width:200px; float:right; border:0px solid green;margin-top:2px;
 }
 .log{
 	float:left;
 	text-decoration:none;
 	color:aqua; 	
 	margin-left:-8px;
-	margin-top:8px;
+	margin-top:9px;
 	border:0px solid green;
 	font-family: 'Libre Baskerville', serif; 
 	font-size: 12px;
-	margin-right: 15px;
+	margin-right: 22px;
 }
 .login img{
-	height:27px; width:40px; border:0px solid ivory; float:left; margin-top:2px;
+	height:27px; width:40px; border:0px solid ivory; float:left; margin-top:3px;
 }
 .sign{
 	height:27px; width:25px; border:0px solid ivory; float:left; margin-top:2px; margin-right: 5px;

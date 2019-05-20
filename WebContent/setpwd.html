@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Trust In Me</title>
+<link type="text/css" rel="stylesheet" href="setpwd.css">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript">
+function mouseoverPass() {
+	var obj = document.getElementById('myPassword');
+	if(obj.type == "password"){
+		obj.type="text";
+	}else{
+		obj.type = "password";
+	}
+}
+function Confirm() {
+	var obj = document.getElementById('confirm');
+	if(obj.type == "password"){
+		obj.type="text";
+	}else{
+		obj.type = "password";
+	}
+
+}
+</script>
+	<div class="navbar"><div class="login">
+			<img src="login.png"/><a href="Login.html" class="log">Log in</a>
+			<img src="signup.png" class="sign"/><a href="SignupUser.html" class="log">Sign up</a>
+		</div></div>
+	<div class="header">
+			<div class="company"><a href="Home.html">Trust In Me</a></div>				
+			<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
+		
+	</div>
+	<div class="reset">
+		<p class="pwd"><b>Reset</b> Password</p>
+		<form action="SetPwdServlet" method="post">
+				<div class="label">Enter the otp:</div><input type="number" name="otp" /><br>
+				<div class="label">New Password:</div><input type="password" name="password" id="myPassword" required="required"/><br>
+				<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" />
+				<div class="label">Confirm Password:</div><input type="password" name="cnfrm" id="confirm" required="required"/><br>
+				<img src="pswdeye.svg" class="eye" onclick="Confirm();"/>
+				<button type="submit" class="send">Confirm</button>
+		</form>		
+	</div>
+</body>
+</html>

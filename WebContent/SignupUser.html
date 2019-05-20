@@ -3,7 +3,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Open a online Trading account with Trust in Me</title>
-<!-- <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Dancing+Script|Noto+Serif" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="Signup.css">
 </head>
@@ -16,6 +15,14 @@ obj.type = "text";
 function mouseoutPass(obj) {
 var obj = document.getElementById('myPassword');
 obj.type = "password";
+}
+function Confirm(obj) {
+	var obj = document.getElementById('cnfrm');
+	obj.type = "text";
+}
+function ConfirmOut(obj) {
+	var obj = document.getElementById('cnfrm');
+	obj.type = "password";
 }
 </script>
 	<div class="header">
@@ -31,9 +38,9 @@ obj.type = "password";
 	<!-- <div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div> -->
 	<div class="fields">
 		<form action="CustomerOverview" method="post">
-			<input type="Text" name="firstname" placeholder="    First Name">
-			<input type="text" name="lastname" placeholder="     Last Name"><br>
-			<select name="city">
+			<input type="Text" name="firstname" placeholder="    First Name" required="required">
+			<input type="text" name="lastname" placeholder="     Last Name" required="required"><br>
+			<select name="city" required="required">
 				<option>&nbsp;&nbsp;&nbsp;Select City</option>
 				<option>Bengaluru</option>
 				<option>Hyderabad</option>
@@ -46,15 +53,15 @@ obj.type = "password";
 				<option>Tirupati</option>	
 				<option>Nandyal</option>
 			</select>
-			<input type="text" name="State" placeholder="    State"/><br>
-			<input type="text" name="email" placeholder="    Email" />
-			<input type="text" name="mobile" placeholder="    Mobile" maxlength="10"/><br>
-			<input type="text" name="pincode" placeholder="    Pincode" />
-			<input type="text" name="PanNo" placeholder="     Pancard No" /><br>
-			<input type="password" name="Password" id="myPassword" placeholder="    Create Password" />
-			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
-			<input type="password" name="Password" id="myPassword" placeholder="    Confirm Password" /><br>
-			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
+			<input type="text" name="State" placeholder="    State"required="required"/><br>
+			<input type="email" name="email" placeholder="    Email" required="required" />
+			<input type="text" name="mobile" placeholder="    Mobile" maxlength="10" required="required" pattern="[7-9]{1}[0-9]{9}"/><br>
+			<input type="text" name="pincode" placeholder="    Pincode" required="required"/>
+			<input type="text" name="PanNo" placeholder="     Pancard No" required="required"/><br>
+			<input type="password" name="Password" id="myPassword" placeholder="    Create Password" required="required"/>
+			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();" />
+			<input type="password" name="cnfrm" id="cnfrm" placeholder="    Confirm Password" required="required"/><br>
+			<img src="pswdeye.svg" class="eye" onclick="Confirm();" onmouseout="ConfirmOut();" />
 			<button type="submit">Register</button>		
 			<div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div>
 		</form>
