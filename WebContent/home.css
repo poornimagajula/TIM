@@ -16,12 +16,18 @@
 	position:fixed; 
 	border:0px solid green;
 }
+.company_name{
+	height:98px;
+	width:250px;
+	border:0px solid aqua;
+	margin-left:40%;
+}
 .company{
 	height:60px; 
 	width:300px; 
 	border:0px solid yellow; 
 	margin-top:25px; 
-	margin-left:40%; 
+	margin-left:2%; 
 	font-family:'Libre Baskerville', serif; 
 	font-size: 35px; 
 	opacity:0.7%; 
@@ -37,7 +43,7 @@
 	font-family:'Rubik', sans-serif; 
 	font-size:12px; 
 	border:0px solid yellow; 
-	margin-left:43.5%; 
+	margin-left:5%; 
 	position:fixed;	
 	color:aqua; 
 	font-weight:580; 
@@ -62,4 +68,23 @@
 }
 .sign{
 	height:27px; width:25px; border:0px solid ivory; float:left; margin-top:2px; margin-right: 5px;
+}
+.admin{
+	height:30px;
+	width:80px;
+	border:1px solid aqua;
+	margin-top:-65px;
+	float:right;
+	margin-right:70px;
+	text-align:center;
+	padding-top:10px;
+	border-radius: 20px;
+	background-color: aqua;
+	font-family: 'Libre Baskerville', serif; 
+	font-size: 15px;
+	font-weight:600;	
+}
+a{
+	text-decoration: none;
+	
 }

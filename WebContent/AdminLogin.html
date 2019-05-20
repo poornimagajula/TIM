@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login Page</title>
+<link rel="stylesheet" type="text/css" href="admin.css">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript">
+		function mouseoverPass(obj) {
+			var obj = document.getElementById('myPassword');
+			obj.type = "text";
+		}
+		function mouseoutPass(obj) {
+			var obj = document.getElementById('myPassword');
+			obj.type = "password";
+		}
+</script>
+<div class="aside">
+	<form action="AdminServlet" method="post">
+		<div class="label">Admin Id:</div><input type="text" name="adminid" /><br>
+		<div class="label">Password:</div><input type="password" name="adminpwd" id="myPassword" /><br>
+		<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
+		<button type="submit" class="cont">Login</button>
+	</form>
+</div>
+
+</body>
+</html>
