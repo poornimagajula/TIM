@@ -10,9 +10,20 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendMail {
+public class SendMail implements Runnable {
+	
+	String name,tomail;
+	
+	SendMail(String name, String tomail){
+		this.name=name;
+		this.tomail=tomail;
+	}
+	 @Override
+	 public void run() {
+		Mailsend();		
+	}
 
-	public void Mailsend(String name, String tomail) {
+	public void Mailsend() {
 
 		final String senderEmail = "trustinme.tim@gmail.com";
 		final String password = "trust@123";

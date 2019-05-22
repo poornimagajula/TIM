@@ -1,0 +1,101 @@
+@charset "ISO-8859-1";
+.header{
+	height:100px; 
+	width:100%; 
+	background-color: #303030; 
+	top:0px; right:0px; 
+	position:fixed; 
+	border:0px solid green;
+}
+.company_name{
+	height:98px;
+	width:250px;
+	border:0px solid aqua;
+	margin-left:5%;
+	float:left;
+}
+.company{
+	height:60px; 
+	width:300px; 
+	border:0px solid yellow; 
+	margin-top:25px; 
+	margin-left:2%; 
+	font-family:'Libre Baskerville', serif; 
+	font-size: 35px; 
+	opacity:0.7%; 
+	color:#FFFFFF; 
+	position:fixed;
+}
+.company a{
+	text-decoration:none;
+	color:#FFFFFF; 	
+}
+.tagline{
+	margin-top:70px; 
+	font-family:'Rubik', sans-serif; 
+	font-size:12px; 
+	border:0px solid yellow; 
+	margin-left:5%; 
+	position:fixed;	
+	color:aqua; 
+	font-weight:580; 
+	position:fixed;
+}
+.Document{
+	height:100px;
+	width:20%;
+	margin-top:10%;
+	border:1px solid black;
+	margin-left:6.5%;
+	border-radius:10px;
+	background-color:seagreen;
+	margin-right:6.5%;
+	color:#FFFFFF;
+	float:left;
+	margin-bottom:-5%;
+	cursor: pointer;
+}
+.Document a{
+	text-decoration: none;
+	
+}
+.anchor{
+	float:left;
+	margin-top:20%;
+	margin-left:17%;
+	text-align:center;
+	border:0px solid tomato;
+	text-decoration:none;
+	color:#FFFFFF;
+	font-family: 'Libre Baskerville', serif; 
+	font-weight: 600;
+	font-size:30px;
+}
+.upload{
+	height:150px;
+	width:300px;
+	margin-top:10%;
+	margin-left:15%;
+	border:0px solid tomato;
+	font-family: 'Libre Baskerville', serif; 
+	font-weight: 600;
+	font-size:30px;
+}
+.button{
+	height:35px;
+	width:100px;
+	border-radius: 10px;
+	border:none;
+	background:#303030;
+	margin-left: 15%;
+	margin-top: 5%;
+	color:#FFFFFF;
+	font-family: 'Libre Baskerville', serif; 
+	font-weight: 550;	
+}
+input{
+	color:teal;
+	font-family: 'Libre Baskerville', serif; 
+	font-weight: 550;	
+	
+}

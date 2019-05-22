@@ -30,7 +30,8 @@ public class AddUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		long start=System.currentTimeMillis();
+		
 		String fname = request.getParameter("firstname");
 		String lname = request.getParameter("lastname");
 		String city = request.getParameter("city");
@@ -65,9 +66,12 @@ public class AddUserServlet extends HttpServlet {
 				int rows_insert = uop.AddUser(u);
 				System.out.println(rows_insert + " Rows inserted");
 				if (rows_insert == 1) {
-					SendMail sm = new SendMail();
-					sm.Mailsend(fname, mail);
+					SendMail sm = new SendMail(fname, mail);
+					sm.run();
 					System.out.println(fname + "%%%%%%%%");
+					long end=System.currentTimeMillis();
+					
+					System.out.println("Time Taken:"+(end-start));
 					request.getRequestDispatcher("Login.html").forward(request, response);
 				}
 			}else {
@@ -87,7 +91,7 @@ public class AddUserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

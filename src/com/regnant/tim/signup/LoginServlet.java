@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AddUserServlet
@@ -55,11 +56,12 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("/Login.html").forward(request, response);
 		}
 		else {
-			request.getRequestDispatcher("Success.html").forward(request, response);	
+			HttpSession session=request.getSession();
+			session.setAttribute("userid",userid);
+			session.setAttribute("pwd", password);
+			request.getRequestDispatcher("ViewDoc.html").forward(request, response);	
 			}
-		}	
-		
-		
+		}		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

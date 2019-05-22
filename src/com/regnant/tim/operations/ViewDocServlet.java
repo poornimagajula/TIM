@@ -1,27 +1,26 @@
-package com.regnant.tim.admin;
+package com.regnant.tim.operations;
+
 
 import java.io.IOException;
+import java.util.List;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AdminServlet
+ * Servlet implementation class ViewDocServlet
  */
-@WebServlet(name="Adminlogin", urlPatterns= {"/AdminServlet"}, 
-	initParams = {@WebInitParam(name="AdminId", value="Admin101"),@WebInitParam(name="password", value="Admin@123")})
-public class AdminServlet extends HttpServlet {
+@WebServlet("/ViewDocServlet")
+public class ViewDocServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminServlet() {
+    public ViewDocServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,17 +29,13 @@ public class AdminServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ServletConfig sc=getServletConfig();
-		String Adminid_param = sc.getInitParameter("AdminId");
-		String password_param=sc.getInitParameter("password");
+		DocCRUDOperations dop=new DocCRUDOperations();
+		List<DocFileBean> list=dop.getDoc();
 		
-		String Adminid=request.getParameter("adminid");
-		String pwd=request.getParameter("adminpwd");
+		for(DocFileBean d:list) {		
+			
+			request.getRequestDispatcher(d.getFilepath()).forward(request, response);
 		
-		if(Adminid_param.equals(Adminid)&& password_param.equals(pwd)) {
-			request.getRequestDispatcher("UploadDoc.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("AdminLogin.html").forward(request, response);
 		}
 	}
 

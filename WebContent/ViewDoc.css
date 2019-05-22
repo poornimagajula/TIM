@@ -27,7 +27,7 @@
 	height:28px;
 	width:130px;
 	border:2px solid #FFFFFF;
-	margin-left:15%;
+	margin-left:6%;
 	margin-top:4.3%;
 	padding-top:0.5%;
 	float:left;
@@ -35,7 +35,8 @@
 	font-family:'Libre Baskerville', serif; 
 	font-size: 16px; 
 	color:#FFFFFF;
-	border-radius: 20px;	
+	border-radius: 20px;
+		
 }
 .menu:hover{
 	background-color: #FFFFFF;
@@ -70,17 +71,17 @@
 	position:fixed;
 }
 .login{
-	height:30px; width:200px; float:right; border:0px solid green;margin-top:2px;
+	height:30px; width:150px; float:right; border:0px solid green;margin-top:2px;
 }
 .log{
 	float:left;
 	text-decoration:none;
 	color:aqua; 	
 	margin-left:-8px;
-	margin-top:9px;
+	margin-top:6px;
 	border:0px solid green;
 	font-family: 'Libre Baskerville', serif; 
-	font-size: 12px;
+	font-size: 16px;
 	margin-right: 22px;
 }
 .login img{
@@ -92,4 +93,9 @@
 .menu a{
 	text-decoration: none;
 	color:#FFFFFF;
+}
+.menu a:hover{	
+	background-color: #FFFFFF;
+	color:#464646;
+	font-weight: 600;
 }
