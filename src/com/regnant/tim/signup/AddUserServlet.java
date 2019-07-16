@@ -59,9 +59,7 @@ public class AddUserServlet extends HttpServlet {
 		Validator v = new Validator();
 		boolean chk = v.checkSignUp(mail, mobile, pan);
 		if (chk) {
-			System.out.println("^^^^^^^^" + u.mobile);
-			if (password.equals(pass)) {
-				System.out.println(pass + "&&&&&&&&&&&&");
+				System.out.println("^^^^^^^^" + u.mobile);
 				UserCRUDOperations uop = new UserCRUDOperations();
 				int rows_insert = uop.AddUser(u);
 				System.out.println(rows_insert + " Rows inserted");
@@ -74,10 +72,7 @@ public class AddUserServlet extends HttpServlet {
 					System.out.println("Time Taken:"+(end-start));
 					request.getRequestDispatcher("Login.html").forward(request, response);
 				}
-			}else {
-				request.getRequestDispatcher("SignupUser.html").forward(request, response);
-			}
-
+			
 		} else {
 			request.getRequestDispatcher("alreadyuser.html").forward(request, response);
 

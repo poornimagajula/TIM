@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Login Page</title>
-		<link rel="stylesheet" type="text/css" href="Login.css">
-		<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
-	</head>
-	<body>
-	<script type="text/javascript">
+<head>
+<meta charset="ISO-8859-1">
+<title>Trust In Me</title>
+<link type="text/css" rel="stylesheet" href="Login.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<script type="text/javascript">
 		function mouseoverPass(obj) {
 			var obj = document.getElementById('myPassword');
 			obj.type = "text";
@@ -16,26 +17,55 @@
 			var obj = document.getElementById('myPassword');
 			obj.type = "password";
 		}
+		function validate(){
+			var inp = document.getElementById('uid');
+			
+			if(inp.value==""){
+				alert("Enter valid Username")
+				inp.style.border="thin dotted tomato";
+				inp.placeholder = " Enter Valid Username"
+			}
+		}
 	</script>
-		<div class="header">
-			<div class="company"><a href="Home.html">Trust In Me</a></div>				
-			<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
+	<div class="navbar">
+		<div class="logo">
+			<a href="Trust_Home.html" class="company">Trust In Me</a> <span
+				class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
 		</div>
-		<div class="Login">
-			<div class="loginto" >
-				<p class="login"><b>Login</b> to continue</p>
+		<div class="topnav">
+			<a href="Trust_Home.html" class="active">Home</a> 
+			<a href="#">About</a> 
+			<div class="dropdown">
+				<button class="dropbtn">Markets
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+				</div>
 			</div>
-			<div class="msg">
-				<p class="sign"> Don't have a TIM Account? <a href="SignupUser.html">Sign-Up</a></p>
+		</div>
+	</div>
+	<div class="aside">
+		<div class="reg"><img src="register.png" /><a href="SignupUser.html">Register</a></div>
+		<div class="sign"><img src="sign.png" /><a href="Login.html">Sign In</a></div>
+		<div class="form">
+			<div class="register">
+				<img src="signin.png"/><h5>SIGN IN<br></h5>
+				<span>Have an account? Sign in & start trading</span>				
 			</div>
-			<form action="Login" method="post">
-				<div class="label">User Id:</div><input type="text" name="userid" /><br>
-				<div class="label">Pan No:</div><input type="text" name="PanNo"/><br>
-				<div class="label">Password:<a href="forgot.html" class="fpwd">Forgot Password?</a></div><input type="password" name="Password" id="myPassword" /><br>
+			<form action="Login" method="post" >
+				<input type="text" name="userid" id="uid" placeholder="   Mail id or Mobile Number"  required="required"/>
+				<input type="text" name="PanNo" placeholder="   Pan No"/>
+				<a href="forgot.html" class="forgot">Forgot Password ?</a>
+				<input type="password" name="Password" id="myPassword" placeholder="   Password" />
 				<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();"/>
-				<button type="submit" class="cont">Continue</button>
+				<button type="submit" class="cont" onclick="validate()">Sign In</button>
 			</form>		
+			<span class="matter">By clicking Get Trail you agree to our terms of conditions of <br>this product</span>
+		
 		</div>
-
-	</body>
+	</div>
+	<div class="article">
+	</div>
+</body>
 </html>

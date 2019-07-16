@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Open a online Trading account with Trust in Me</title>
-<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="Signup.css">
+<title>Trust In Me</title>
+<link type="text/css" rel="stylesheet" href="Signup.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body bgcolor="#F1F1F1">
+<body>
 <script type="text/javascript">
 function mouseoverPass(obj) {
 var obj = document.getElementById('myPassword');
@@ -24,20 +25,57 @@ function ConfirmOut(obj) {
 	var obj = document.getElementById('cnfrm');
 	obj.type = "password";
 }
+function matchpass(){
+	var pass = document.signup.Password.value;
+	var cnfrm = document.signup.cnfrm.value;
+	if(pass==cnfrm){
+		return true;
+	}else{
+		alert("Password must be same");
+		return false;
+	}
+}
 </script>
-	<div class="header">
-		<div class="company"><a href="Home.html">Trust In Me</a></div>				
-		<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
-		
+<div class="flex_container">
+	<div class="flex-item1">
+		<a href="Trust_Home.html">Trust In Me</a> 
+		<span>S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
 	</div>
-	<div class="company_name">
-		<span class="name">Signing up for Trust in Me is fast and free. </span>
+	<div class="flex-item2"><a href="Trust_Home.html">Home</a> </div>
+	<div class="flex-item2"><a href="#">About</a></div>
+	<div class="flex-item2">
+		<div class="tooltip">Markets
+		<span class="text">Link1</span></div>
+	</div>
+	<div class="flex-item2"><a href="#contact">Contact-Us</a></div>
 	</div> 
-	<div class="Signup" style="background-color:white;" >
-	<div class="getstarted" >Get started</div>
-	<!-- <div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div> -->
-	<div class="fields">
-		<form action="CustomerOverview" method="post">
+	<!-- <div class="navbar">
+		<div class="logo">
+			<a href="Trust_Home.html" class="company">Trust In Me</a> <span
+				class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
+		</div>
+		<div class="topnav">
+			<a href="Trust_Home.html" class="active">Home</a> 
+			<a href="#">About</a> 
+			<div class="dropdown">
+				<button class="dropbtn">Markets
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+					<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link 3</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="aside">
+		<div class="reg"><img src="register.png" /><a href="SignupUser.html">Register</a></div>
+		<div class="sign"><img src="sign.png" /><a href="Login.html">Sign In</a></div>
+		<div class="form">
+			<div class="register">
+				<img src="register_bg.png"/><h5>REGISTER<br></h5>
+				<span>Don't have an account? Register to start trading</span>				
+			</div>
+			<form name="signup" action="CustomerOverview" method="post" onsubmit="return matchpass()">
 			<input type="Text" name="firstname" placeholder="    First Name" required="required">
 			<input type="text" name="lastname" placeholder="     Last Name" required="required"><br>
 			<select name="city" required="required">
@@ -62,10 +100,50 @@ function ConfirmOut(obj) {
 			<img src="pswdeye.svg" class="eye" onclick="mouseoverPass();" onmouseout="mouseoutPass();" />
 			<input type="password" name="cnfrm" id="cnfrm" placeholder="    Confirm Password" required="required"/><br>
 			<img src="pswdeye.svg" class="eye" onclick="Confirm();" onmouseout="ConfirmOut();" />
-			<button type="submit">Register</button>		
-			<div class="login">Already have TIM Account ?<a href="Login.html">Login</a></div>
-		</form>
+			<button type="submit">Register</button>	
+			</form>	
+			<span class="matter"> By Signing up you agree to our terms of conditions</span>
+		
+		</div>
 	</div>
+	<div class="article">
+	
+	
+	</div>
+	<div class="footer" id="contact">
+		<div class="foot1">
+			<div class="flogo">
+				<a href="Trust_Home.html" class="fcompany">Trust In Me</a> 
+				<span class="ftagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>
+			</div>
+			<div class="icons">
+				<img src="tweet.png" />
+				<img src="icon2.png" />
+				<img src="linkedin.png" />
+				<img src="gplus.png" />
+				<img src="fb.png" />
+			</div>
+		</div>
+		<div class="foot2">
+		<h3>Solutions</h3>
+		<ul>		
+		<li>Fee Info</li>
+		<li>Start Trading</li>
+		<li>We are hiring</li>
+		<li>Blog posts</li>
+		<li>API Docs</li>
+		</ul>
+		</div>
+		<div class="foot3">
+		<h3>Useful links</h3>
+		<ul>		
+		<li>About Us</li>
+		<li>Help & Support</li>
+		<li>Privacy Policy</li>
+		<li>Terms & Conditions</li>
+		<li>FAQ</li>
+		</ul></div>
+		<span class="rights">2019 @ Trust In Me. All Rights Reserved</span>
 	</div>
 </body>
 </html>

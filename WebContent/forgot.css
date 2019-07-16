@@ -1,16 +1,8 @@
 @charset "ISO-8859-1";
-.navbar{
-	height:40px;
-	width:100%;
-	top:0px; right:0px;
-	position: fixed;
-	border:0px solid tomato;
-	background-color: #464646;
-}
+
 .header{
 	height:100px; 
 	width:100%; 
-	margin-top:40px;
 	background-color: #303030; 
 	top:0px; right:0px; 
 	position:fixed; 

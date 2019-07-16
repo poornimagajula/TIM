@@ -8,13 +8,14 @@
 <link rel="stylesheet" type="text/css" href="GetDoc.css">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Libre+Baskerville|Rubik&display=swap" rel="stylesheet">
 </head>
-<body>
-	<div class="header">
+<body background="uploaddoc_bg.png">
+<!-- 	<div class="header">
 		<div class="company_name">
 			<div class="company"><a href="Home.html">Trust In Me</a></div>				
 			<span class="tagline">S H A R E S&nbsp;&nbsp;I N&nbsp;&nbsp;C A R T</span>			
 		</div>
-	</div>
+	</div> -->
+	
 	<div class="upload">
 		File: <form action="UploadDocServlet" method="post" enctype="multipart/form-data">
 			<input type="file" name="test_file" size="50" /><br />

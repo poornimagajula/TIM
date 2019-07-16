@@ -1,26 +1,24 @@
-package com.regnant.tim.operations;
-
+package com.regnant.tim.signup;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ViewDocServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/ViewDocServlet")
-public class ViewDocServlet extends HttpServlet {
+@WebServlet("/LogoutServlet")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewDocServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,14 +27,11 @@ public class ViewDocServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DocCRUDOperations dop=new DocCRUDOperations();
-		List<DocFileBean> list=dop.getDoc();
-		
-		for(DocFileBean d:list) {		
-			
-			request.getRequestDispatcher(d.getFilepath()).forward(request, response);
-		
-		}
+		HttpSession session=request.getSession();
+		session.getAttribute("userid");
+		session.getAttribute("pwd");
+		session.invalidate();
+		request.getRequestDispatcher("Login.html").forward(request,response);
 	}
 
 	/**

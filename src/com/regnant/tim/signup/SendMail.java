@@ -33,12 +33,16 @@ public class SendMail implements Runnable {
 		prop.put("mail.smtp.starttls.enable", "true");
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", 587);
+		
 
 		Session session = Session.getInstance(prop, new javax.mail.Authenticator() {
+			
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(senderEmail, password);
 			}
+		
 		});
+		session.setDebug(true);
 		Message message = new MimeMessage(session);
 
 		try {
@@ -55,5 +59,8 @@ public class SendMail implements Runnable {
 		}
 
 	}
-	
+	public static void main(String[] args) {
+		SendMail s=new SendMail("Poornima", "poornima.thota31@gmail.com");
+		s.run();
+	}
 }
